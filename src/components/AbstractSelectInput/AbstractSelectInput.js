@@ -11,12 +11,12 @@ class AbstractSelectInput extends Component {
     }
   }
   
-  static getDerivedStateFromProps(nextProps, prevState){
-    if(nextProps.value !== prevState.selectedValue){
-      return { selectedValue: nextProps.value };
-    }
-    else return prevState;
-  }
+//   static getDerivedStateFromProps(nextProps, prevState){
+//     if(nextProps.value !== prevState.selectedValue){
+//       return { selectedValue: nextProps.value };
+//     }
+//     else return prevState;
+//   }
 
 //   componentWillReceiveProps(nextProps) {
 //     const { value } = this.props
