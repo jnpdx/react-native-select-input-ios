@@ -21,12 +21,12 @@ class PickerKeyboard extends Component {
     this.picker = component
   }
 
-  static getDerivedStateFromProps(nextProps, prevState){
-    if(nextProps.value!==prevState.value){
-      return { value: nextProps.value};
-    }
-    else return prevState;
-  }
+//   static getDerivedStateFromProps(nextProps, prevState){
+//     if(nextProps.value!==prevState.value){
+//       return { value: nextProps.value};
+//     }
+//     else return prevState;
+//   }
   
 //   componentWillReceiveProps(nextProps) {
 //     const { value } = this.state
