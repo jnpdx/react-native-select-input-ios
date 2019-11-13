@@ -10,16 +10,23 @@ class AbstractSelectInput extends Component {
       selectedValue: props.value
     }
   }
-
-  componentWillReceiveProps(nextProps) {
-    const { value } = this.props
-
-    if (nextProps.value !== value) {
-      this.setState({
-        selectedValue: nextProps.value
-      })
+  
+  static getDerivedStateFromProps(nextProps, prevState){
+    if(nextProps.value !== prevState.selectedValue){
+      return { selectedValue: nextProps.value };
     }
+    else return prevState;
   }
+
+//   componentWillReceiveProps(nextProps) {
+//     const { value } = this.props
+
+//     if (nextProps.value !== value) {
+//       this.setState({
+//         selectedValue: nextProps.value
+//       })
+//     }
+//   }
 
   focus() {
     // NOTE: - implemented on iOS only..
