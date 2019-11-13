@@ -21,15 +21,22 @@ class PickerKeyboard extends Component {
     this.picker = component
   }
 
-  componentWillReceiveProps(nextProps) {
-    const { value } = this.state
-
-    if (nextProps.value !== value) {
-      this.setState({
-        value: nextProps.value
-      })
+  static getDerivedStateFromProps(nextProps, prevState){
+    if(nextProps.value!==prevState.value){
+      return { value: nextProps.value};
     }
+    else return prevState;
   }
+  
+//   componentWillReceiveProps(nextProps) {
+//     const { value } = this.state
+
+//     if (nextProps.value !== value) {
+//       this.setState({
+//         value: nextProps.value
+//       })
+//     }
+//   }
 
   focus() {
     this.setVisible(true)
