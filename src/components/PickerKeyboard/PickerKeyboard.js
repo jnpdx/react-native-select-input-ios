@@ -15,7 +15,8 @@ class PickerKeyboard extends Component {
     this.state = {
       value: props.value,
       visible: false,
-      width: Dimensions.get('window').width
+      width: Dimensions.get('window').width,
+      listener: undefined,
     }
   }
 
@@ -24,7 +25,7 @@ class PickerKeyboard extends Component {
   }
 
   componentWillUnmount() {
-    Dimensions.removeEventListener('change', this.updateDimensions)
+    this.state.listener.remove()
   }
 
   updateDimensions = () => {
