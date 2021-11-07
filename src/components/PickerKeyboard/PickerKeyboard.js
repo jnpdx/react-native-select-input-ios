@@ -21,7 +21,8 @@ class PickerKeyboard extends Component {
   }
 
   componentDidMount() {
-    Dimensions.addEventListener('change', this.updateDimensions)
+    const listener = Dimensions.addEventListener('change', this.updateDimensions)
+    this.setState(prevState => ({...prevState, listener}));
   }
 
   componentWillUnmount() {
